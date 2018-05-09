@@ -18473,28 +18473,28 @@ BUILDIN(setunitdata)
 			md->ud.canact_tick = timer->gettick() + val;
 			break;
 		case UDT_STR:
-			md->status.str = (unsigned short) val;
-			status->calc_misc(bl, &md->status, md->level);
+			md->base_status->str = (unsigned short) val;
+			status_calc_bl(&md->bl, SCB_STR);
 			break;
 		case UDT_AGI:
-			md->status.agi = (unsigned short) val;
-			status->calc_misc(bl, &md->status, md->level);
+			md->base_status->agi = (unsigned short) val;
+			status_calc_bl(&md->bl, SCB_AGI);
 			break;
 		case UDT_VIT:
-			md->status.vit = (unsigned short) val;
-			status->calc_misc(bl, &md->status, md->level);
+			md->base_status->vit = (unsigned short) val;
+			status_calc_bl(&md->bl, SCB_VIT);
 			break;
 		case UDT_INT:
-			md->status.int_ = (unsigned short) val;
-			status->calc_misc(bl, &md->status, md->level);
+			md->base_status->int_ = (unsigned short) val;
+			status_calc_bl(&md->bl, SCB_INT);
 			break;
 		case UDT_DEX:
-			md->status.dex = (unsigned short) val;
-			status->calc_misc(bl, &md->status, md->level);
+			md->base_status->dex = (unsigned short) val;
+			status_calc_bl(&md->bl, SCB_DEX);
 			break;
 		case UDT_LUK:
-			md->status.luk = (unsigned short) val;
-			status->calc_misc(bl, &md->status, md->level);
+			md->base_status->luk = (unsigned short) val;
+			status_calc_bl(&md->bl, SCB_LUK);
 			break;
 		case UDT_ATKRANGE:
 			md->status.rhw.range = (unsigned short) val;
